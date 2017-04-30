@@ -108,7 +108,6 @@ public:
   Vec2D *texCoords;
   Vec3D *vertices;
   std::vector<uint32> indices;
-  std::vector<GameFile *> TextureList;
   // --
 
   WoWModel(GameFile * file, bool forceAnim = false);
@@ -181,10 +180,11 @@ public:
   // ===============================
   // Texture data
   // ===============================
-  TextureID *textures;
-  int specialTextures[TEXTURE_MAX];
-  GLuint replaceTextures[TEXTURE_MAX];
-  bool useReplaceTextures[TEXTURE_MAX];
+  std::vector<TextureID> textures;
+  std::vector<int> specialTextures;
+  std::vector<GLuint> replaceTextures;
+  std::vector<bool> useReplaceTextures;
+  std::vector<GameFile *> TextureList;
   CharTexture tex;
   // -------------------------------
 
